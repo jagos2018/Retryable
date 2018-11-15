@@ -137,19 +137,5 @@ namespace Retryable
             }
             return result;
         }
-
-        public List<int> PullFromQueue(string id, int count) {
-            if (id == "") {
-                // Specify conditions to Retry on.
-                throw new RetryableException();
-            } else {
-                return new List<int>();
-            }
-        }
-
-        public void dostuff() {
-            // Run a method as retrable.
-            List<int> queueItems = Retry.DoAsRetry(PullFromQueue, "id", 5);
-        }
     }
 }
